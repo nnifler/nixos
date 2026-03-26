@@ -43,16 +43,12 @@
       user = {
         name = "Finn";
         email = "finn.schubert@stud.tu-darmstadt.de";
-        signingKey = "${config.home.homeDirectory}/.ssh/github_sign_ed25519"; 
-        # Make public key if ssh agent is used
+        signingKey = "${config.home.homeDirectory}/.ssh/github_sign_ed25519.pub"; 
+        # What about allowedSignersFile? How is that necessary
       };
       init.defaultBranch = "main";
       gpg.format = "ssh";
-      # signing = {
-      #   format = "ssh";
-      #   key = "${config.home.homeDirectory}/.ssh/github_sign_ed25519.pub";
-      #   signByDefault = true;
-      # };
+      commit.gpgSign = true;  
     };
   };
 
