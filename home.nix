@@ -1,4 +1,4 @@
-{ configs, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.username = "finns";
@@ -40,14 +40,19 @@
   programs.git = {
     enable = true;
     settings = {
-      user.name = "Finn";
-      user.email = "finn.schubert@stud.tu-darmstadt.de";
-      init.defaultBranch = "main";
-      signing = {
-        format = "ssh";
-        key = "/home/finns/.ssh/github_sign_ed25519.pub";
-        signByDefault = true;
+      user = {
+        name = "Finn";
+        email = "finn.schubert@stud.tu-darmstadt.de";
+        signingKey = "${config.home.homeDirectory}/.ssh/github_sign_ed25519"; 
+        # Make public key if ssh agent is used
       };
+      init.defaultBranch = "main";
+      gpg.format = "ssh";
+      # signing = {
+      #   format = "ssh";
+      #   key = "${config.home.homeDirectory}/.ssh/github_sign_ed25519.pub";
+      #   signByDefault = true;
+      # };
     };
   };
 
