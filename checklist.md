@@ -1,0 +1,5 @@
+- SSH Agent / Passphrase for SSH key
+- SWAP
+- BIOS Update
+- Config on github
+- Password manager
