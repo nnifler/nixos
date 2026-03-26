@@ -43,6 +43,11 @@
       user.name = "Finn";
       user.email = "finn.schubert@stud.tu-darmstadt.de";
       init.defaultBranch = "main";
+      signing = {
+        format = "ssh";
+        key = "/home/finns/.ssh/github_sign_ed25519.pub";
+        signByDefault = true;
+      };
     };
   };
 
