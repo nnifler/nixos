@@ -114,7 +114,7 @@
   environment.pathsToLink = [ "/share/zsh" ];
 
   # Home manager
-  home-manager.backupFileExtension = "backup";
+  # home-manager.backupFileExtension = "backup";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
