@@ -1,5 +1,4 @@
 - SSH Agent / Passphrase for SSH key
 - SWAP
 - BIOS Update
-- Github verify
 - Password manager

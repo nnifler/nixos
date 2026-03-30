@@ -91,9 +91,6 @@
     shell = pkgs.zsh;
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -115,6 +112,9 @@
   # Zsh
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
+
+  # Home manager
+  home-manager.backupFileExtension = "backup";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
