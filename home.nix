@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -47,14 +52,19 @@
       user = {
         name = "Finn";
         email = "finn.schubert@stud.tu-darmstadt.de";
-        signingKey = "${config.home.homeDirectory}/.ssh/github_sign_ed25519.pub"; 
+        signingKey = "${config.home.homeDirectory}/.ssh/github_sign_ed25519.pub";
         # What about allowedSignersFile? How is that necessary
       };
       init.defaultBranch = "main";
       gpg.format = "ssh";
-      commit.gpgSign = true;  
+      commit.gpgSign = true;
     };
   };
+
+  home.packages = with pkgs; [
+    prismlauncher
+    spotify
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

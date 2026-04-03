@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -78,7 +83,7 @@
   # services.xserver.libinput.enable = true;
 
   # Enable fingerprint support
-  services.fprintd.enable = lib.mkDefault true;
+  services.fprintd.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.finns = {
@@ -95,7 +100,7 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = false;
 
   # Flakes
   nix.settings.experimental-features = [
@@ -103,18 +108,31 @@
     "flakes"
   ];
 
+  # Unfree whitelist
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "spotify"
+      "steam"
+      "steam-unwrapped"
+    ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     emacs
-    fwupd
     nixfmt
-    spotify
   ];
+
+  # fwupd
+  services.fwupd.enable = true;
 
   # Zsh
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
+
+  # Steam
+  programs.steam.enable = true;
 
   # Home manager
   # home-manager.backupFileExtension = "backup";

@@ -3,6 +3,9 @@
 {
   programs.firefox = {
     enable = true;
+    policies = {
+      DisplayBookmarksToolbar = "always";
+    };
     profiles.default = {
       search = {
         engines = {
@@ -14,6 +17,10 @@
           };
         };
         force = true;
+      };
+      settings = {
+        "browser.translations.automaticallyPopup" = false;
+        "browser.translations.neverTranslateLanguages" = "de";
       };
     };
   };

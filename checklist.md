@@ -2,3 +2,4 @@
 - SWAP
 - BIOS Update
 - Password manager
+- Secure boot
