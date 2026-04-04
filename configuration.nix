@@ -13,6 +13,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./server
   ];
 
   # Bootloader.
@@ -133,6 +134,9 @@
 
   # Steam
   programs.steam.enable = true;
+
+  # Server stuff
+  # server-config.enable = true;
 
   # Home manager
   # home-manager.backupFileExtension = "backup";
