@@ -3,7 +3,7 @@
   lib,
   ...
 }:
-with lib; 
+with lib;
 let
   mkServerOption =
     name:

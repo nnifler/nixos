@@ -11,7 +11,7 @@
         engines = {
           merriam-webster = {
             name = "Merriam Webster";
-            urls = [{ template = "https://www.merriam-webster.com/dictionary/{searchTerms}"; }];
+            urls = [ { template = "https://www.merriam-webster.com/dictionary/{searchTerms}"; } ];
             icon = "https://www.merriam-webster.com/favicon.svg";
             definedAliases = [ "!mw" ];
           };

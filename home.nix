@@ -39,10 +39,16 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-      pkief.material-icon-theme
-    ];
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+        pkief.material-icon-theme
+      ];
+      userSettings = {
+        "editor.formatOnSave" = true;
+        "workbench.iconTheme" = "material-icon-theme";
+      };
+    };
   };
 
   # Git
@@ -64,6 +70,7 @@
   home.packages = with pkgs; [
     prismlauncher
     spotify
+    signal-desktop
   ];
 
   # This value determines the Home Manager release that your
