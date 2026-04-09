@@ -8,6 +8,8 @@
 {
   imports = [
     ./home-configuration/firefox.nix
+    ./home-configuration/mail.nix
+    ./home-configuration/gnome.nix
   ];
 
   home.username = "finns";
