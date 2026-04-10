@@ -73,6 +73,7 @@
     prismlauncher
     spotify
     signal-desktop
+    bitwarden-desktop
   ];
 
   # This value determines the Home Manager release that your
