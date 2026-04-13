@@ -5,6 +5,8 @@
     enable = true;
     policies = {
       DisplayBookmarksToolbar = "always";
+      OfferToSaveLogins = false;
+      PasswordManagerEnabled = false;
     };
     profiles.default = {
       search = {
