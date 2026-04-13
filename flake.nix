@@ -24,7 +24,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.finns = import ./home.nix;
+            home-manager.users.finns = import ./home-configuration/home.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
