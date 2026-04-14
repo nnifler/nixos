@@ -7,13 +7,13 @@
 
 {
   imports = [
-    ./home-configuration/firefox.nix
-    ./home-configuration/mail.nix
-    ./home-configuration/gnome.nix
+    ./programs
   ];
 
   home.username = "finns";
   home.homeDirectory = "/home/finns";
+
+  home-config.programs.enable = true;
 
   # Shell
   programs.zsh = {
@@ -49,6 +49,7 @@
       userSettings = {
         "editor.formatOnSave" = true;
         "workbench.iconTheme" = "material-icon-theme";
+        "explorer.confirmDragAndDrop" = false;
       };
     };
   };
