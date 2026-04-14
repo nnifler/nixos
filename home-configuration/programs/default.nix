@@ -45,6 +45,8 @@ in
       spotify
       signal-desktop
       bitwarden-desktop
+      emacs # TODO: emacs config via home-manager
+      nixfmt
     ];
   };
 }
