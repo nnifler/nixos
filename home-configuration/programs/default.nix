@@ -40,6 +40,12 @@ in
   ];
 
   config = lib.mkIf config.home-config.programs.enable {
+    # nixpkgs.config.allowUnfreePredicate =
+    #   pkg:
+    #   builtins.elem (lib.getName pkg) [
+    #     "obsidian"
+    #   ];
+
     home.packages = with pkgs; [
       prismlauncher
       spotify
@@ -47,6 +53,9 @@ in
       bitwarden-desktop
       emacs # TODO: emacs config via home-manager
       nixfmt
+      xournalpp
+      obsidian
+      texliveFull
     ];
   };
 }

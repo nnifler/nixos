@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -97,6 +98,7 @@
       "spotify"
       "steam"
       "steam-unwrapped"
+      "obsidian"
     ];
 
   # List packages installed in system profile. To search, run:
@@ -114,6 +116,11 @@
 
   # Steam
   programs.steam.enable = true;
+
+  nix.registry = {
+    cfg.flake = inputs.self;
+    nixpkgs.flake = inputs.nixpkgs;
+  };
 
   # Server stuff
   # server-config.enable = true;

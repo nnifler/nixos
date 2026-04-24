@@ -16,8 +16,14 @@
       home-manager,
       ...
     }@inputs:
+    let
+      system = "x86_64-linux";
+    in
     {
       nixosConfigurations.KLOMPXI = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
@@ -30,5 +36,6 @@
           }
         ];
       };
+      devShells.${system} = import ./devshells { pkgs = nixpkgs.legacyPackages.${system}; };
     };
 }

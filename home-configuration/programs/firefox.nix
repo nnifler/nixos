@@ -6,6 +6,7 @@
 }:
 
 {
+  # Download pdfs not in firefox??
   config = lib.mkIf config.home-config.programs.firefox.enable {
     programs.firefox = {
       enable = true;
