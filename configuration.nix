@@ -122,6 +122,10 @@
     nixpkgs.flake = inputs.nixpkgs;
   };
 
+  nixpkgs.overlays = [
+    inputs.vscode-extensions.overlays.default
+  ];
+
   # Server stuff
   # server-config.enable = true;
 
