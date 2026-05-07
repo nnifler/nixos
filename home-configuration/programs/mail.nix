@@ -10,13 +10,13 @@
     programs.thunderbird = {
       enable = true;
       profiles.default = {
+        withExternalGnupg = true;
         isDefault = true;
       };
     };
 
     accounts.email.accounts = {
       "Uni" = {
-        primary = true;
         address = "finn.schubert@stud.tu-darmstadt.de";
         realName = "Finn Schubert";
         smtp = {
@@ -30,6 +30,23 @@
           port = 993;
         };
         userName = "fs45bupo";
+        thunderbird.enable = true;
+      };
+      "Gmail" = rec {
+        primary = true;
+        address = "finn.s.schubert@gmail.com";
+        realName = "Finn Schubert";
+        smtp = {
+          tls.enable = true;
+          host = "smtp.gmail.com";
+          port = 465;
+        };
+        imap = {
+          tls.enable = true;
+          host = "imap.gmail.com";
+          port = 993;
+        };
+        userName = address;
         thunderbird.enable = true;
       };
     };

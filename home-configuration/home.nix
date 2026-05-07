@@ -15,6 +15,11 @@
 
   home-config.programs.enable = true;
 
+  services.gpg-agent = {
+    enable = true;
+    pinentry.package = pkgs.pinentry-gtk2;
+  };
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards

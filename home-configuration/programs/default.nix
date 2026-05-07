@@ -56,6 +56,7 @@ in
       xournalpp
       obsidian
       texliveFull
+      gnupg
     ];
   };
 }

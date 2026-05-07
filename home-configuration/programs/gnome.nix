@@ -22,6 +22,10 @@
         gtk-theme = "Adwaita-dark";
         accent-color = "purple";
         color-scheme = "prefer-dark";
+        show-battery-percentage = true;
+      };
+      "org/gnome/desktop/peripherals/touchpad" = {
+        disable-while-typing = false;
       };
     };
   };
