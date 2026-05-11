@@ -3,7 +3,6 @@
   lean = pkgs.mkShell {
     packages = with pkgs; [
       elan
-      cloc
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
