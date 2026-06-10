@@ -4,7 +4,6 @@
   fetchurl,
   stdenvNoCC,
   makeWrapper,
-  writeShellScript,
   links,
 }:
 let

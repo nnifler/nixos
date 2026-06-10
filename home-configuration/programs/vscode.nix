@@ -24,5 +24,9 @@
         };
       };
     };
+
+    home.packages = with pkgs; [
+      nixd
+    ];
   };
 }

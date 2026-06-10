@@ -1,6 +1,5 @@
 {
   lib,
-  config,
   pkgs,
   inputs,
   ...
@@ -76,9 +75,6 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
     shell = pkgs.zsh;
   };
 
@@ -100,12 +96,6 @@
       "steam-unwrapped"
       "obsidian"
     ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-
-  ];
 
   # fwupd
   services.fwupd.enable = true;
