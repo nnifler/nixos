@@ -21,6 +21,7 @@
           "workbench.iconTheme" = "material-icon-theme";
           "explorer.confirmDragAndDrop" = false;
           "workbench.colorTheme" = "Dark Modern";
+          "nix.enableLanguageServer" = true;
         };
       };
     };
