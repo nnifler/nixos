@@ -48,6 +48,7 @@
           "browser.translations.neverTranslateLanguages" = "de";
         };
       };
+      configPath = ".mozilla/firefox";
     };
   };
 }

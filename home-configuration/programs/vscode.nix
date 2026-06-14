@@ -7,9 +7,8 @@
 
 {
   config = lib.mkIf config.home-config.programs.vscode.enable {
-    programs.vscode = {
+    programs.vscodium = {
       enable = true;
-      package = pkgs.vscodium;
       profiles.default = {
         extensions = with pkgs.vscode-marketplace; [
           jnoortheen.nix-ide
@@ -21,6 +20,7 @@
           "editor.formatOnSave" = true;
           "workbench.iconTheme" = "material-icon-theme";
           "explorer.confirmDragAndDrop" = false;
+          "workbench.colorTheme" = "Dark Modern";
         };
       };
     };
