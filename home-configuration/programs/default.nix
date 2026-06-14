@@ -52,7 +52,6 @@ in
       signal-desktop
       # bitwarden-desktop # Wait for update to newer electron
       emacs # TODO: emacs config via home-manager
-      nixfmt
       xournalpp
       obsidian
       texliveFull
