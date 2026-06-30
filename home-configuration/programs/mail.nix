@@ -30,6 +30,7 @@
         };
         userName = "fs45bupo";
         thunderbird.enable = true;
+        gpg.key = "C442559039D0CDBF058390AFE2577B95A89FEE34";
       };
       "Gmail" = rec {
         primary = true;
@@ -47,6 +48,7 @@
         };
         userName = address;
         thunderbird.enable = true;
+        gpg.key = "C442559039D0CDBF058390AFE2577B95A89FEE34";
       };
     };
   };

@@ -30,5 +30,7 @@
       nixfmt
       nixd
     ];
+
+    programs.vim.enable = true;
   };
 }
