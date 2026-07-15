@@ -20,25 +20,30 @@
       ...
     }@inputs:
     let
+      mkHostModule = host: [
+        ./hosts/${host}/configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.finns = import ./hosts/${host}/home.nix;
+        }
+      ];
+
+      mkNixosConfiguration =
+        host:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = (mkHostModule host);
+        };
+
       system = "x86_64-linux";
+      hosts = [ "KLOMPXI" ];
     in
     {
-      nixosConfigurations.KLOMPXI = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-        };
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.finns = import ./home-configuration/home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-          }
-        ];
-      };
+      nixosConfigurations = nixpkgs.lib.genAttrs hosts mkNixosConfiguration;
       devShells.${system} = import ./devshells { pkgs = nixpkgs.legacyPackages.${system}; };
     };
 }

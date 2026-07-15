@@ -8,7 +8,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./server
+    # ./server
   ];
 
   # Bootloader.

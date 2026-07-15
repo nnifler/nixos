@@ -5,7 +5,7 @@
 
 {
   imports = [
-    ./programs
+    ../../home-configuration
   ];
 
   home.username = "finns";
