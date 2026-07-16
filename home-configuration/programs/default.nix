@@ -56,6 +56,7 @@ in
       obsidian
       texliveFull
       gnupg
+      discord
     ];
   };
 }

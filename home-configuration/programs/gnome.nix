@@ -6,6 +6,12 @@
 }:
 
 {
+  options.home-config.programs.gnome.no-sleep = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Disables Automatic Suspend";
+  };
+
   config = lib.mkIf config.home-config.programs.gnome.enable {
     home.packages = with pkgs; [
       gnome-themes-extra
@@ -26,6 +32,9 @@
       };
       "org/gnome/desktop/peripherals/touchpad" = {
         disable-while-typing = false;
+      };
+      "org/gnome/settings-daemon/plugins/power" = lib.mkIf config.home-config.programs.gnome.no-sleep {
+        sleep-inactive-ac-type = "nothing";
       };
     };
   };

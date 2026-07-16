@@ -40,7 +40,10 @@
         };
 
       system = "x86_64-linux";
-      hosts = [ "KLOMPXI" ];
+      hosts = [
+        "KLOMPXI"
+        "KLOMPXL"
+      ];
     in
     {
       nixosConfigurations = nixpkgs.lib.genAttrs hosts mkNixosConfiguration;
