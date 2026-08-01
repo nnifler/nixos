@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,15 +18,21 @@
     {
       nixpkgs,
       home-manager,
+      nixpkgs-unstable,
       ...
     }@inputs:
     let
+      system = "x86_64-linux";
+
       mkHostModule = host: [
         ./hosts/${host}/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+          };
           home-manager.users.finns = import ./hosts/${host}/home.nix;
         }
       ];
@@ -39,7 +46,6 @@
           modules = (mkHostModule host);
         };
 
-      system = "x86_64-linux";
       hosts = [
         "KLOMPXI"
         "KLOMPXL"
