@@ -1,5 +1,3 @@
 - SSH Agent / Passphrase for SSH key
 - SWAP
-- BIOS Update
-- Password manager
 - Secure boot
