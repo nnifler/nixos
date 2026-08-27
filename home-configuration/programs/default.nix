@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  pkgs-unstable,
   ...
 }:
 with lib;
@@ -51,7 +50,7 @@ in
       prismlauncher
       spotify
       signal-desktop
-      pkgs-unstable.bitwarden-desktop # Wait for update to newer electron in stable
+      bitwarden-desktop
       emacs # TODO: emacs config via home-manager
       xournalpp
       obsidian
