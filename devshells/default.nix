@@ -9,6 +9,7 @@
           pkief.material-icon-theme
           leanprover.lean4
           tamasfe.even-better-toml
+          james-yu.latex-workshop
         ];
       })
     ];

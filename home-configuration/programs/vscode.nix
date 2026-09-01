@@ -14,6 +14,7 @@
           jnoortheen.nix-ide
           pkief.material-icon-theme
           dnut.rewrap-revived
+          james-yu.latex-workshop
         ];
         userSettings = {
           "editor.rulers" = [ 80 ];
