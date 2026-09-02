@@ -29,6 +29,7 @@
         accent-color = "purple";
         color-scheme = "prefer-dark";
         show-battery-percentage = true;
+        enable-hot-corners = false;
       };
       "org/gnome/desktop/peripherals/touchpad" = {
         disable-while-typing = false;
